@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
 <!--    <bean id="musicBean"-->
 <!--          class="ru.test.springcourse.RockMusic">-->
@@ -11,8 +13,21 @@
 
 <!--    bean ROck или bean Classic-->
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="musicBean"
           class="ru.test.springcourse.ClassicalMusic">
+    </bean>
+
+    <!--          нужен пустой констрктор и set  ()  -->
+    <bean id="musicPlayer"
+          class="ru.test.springcourse.MusicPlayer">
+          <property name="music" ref="musicBean"/>
+
+<!--        <property name="name" value="Some name" />-->
+<!--        <property name="volume" value="50" />-->
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
