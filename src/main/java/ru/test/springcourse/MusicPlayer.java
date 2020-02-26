@@ -1,10 +1,15 @@
 package ru.test.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
     private Music music;
+//    List<Music> musicList = new ArrayList<>();
 
     private String name;    //  Название плеера
     private int volume;      //  Уровень громкости
+
 
     public String getName() {
         return name;
@@ -40,6 +45,8 @@ public class MusicPlayer {
 //        // или
 //        music = new RockMusic();
         //  код для воспроизведения музыки
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: " + music);
+//        for (Music m : musicList) System.out.println(m.getSong());
     }
+
 }
