@@ -15,25 +15,14 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean1"
+    <bean id="musicBean"
           class="ru.test.springcourse.ClassicalMusic">
     </bean>
 
-    <bean id="musicBean2"
-          class="ru.test.springcourse.RockMusic">
-    </bean>
-
-    <bean id="musicBean3"
-          class="ru.test.springcourse.JazzMusic">
-    </bean>
 
     <!--          нужен пустой констрктор и set  ()  -->
     <bean id="musicPlayer"
           class="ru.test.springcourse.MusicPlayer">
-<!--          <property name="music" ref="musicBean1"/>-->
-<!--          <property name="music2" ref="musicBean2"/>-->
-<!--          <property name="music3" ref="musicBean3"/>-->
-
 <!--        <property name="name" value="Some name" />-->
 <!--        <property name="volume" value="50" />-->
         <property name="name" value="${musicPlayer.name}"/>
