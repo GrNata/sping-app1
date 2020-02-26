@@ -5,22 +5,9 @@ import java.util.List;
 
 public class MusicPlayer {
     private Music music;
-    List<Music> musicList = new ArrayList<>();
 
     private String name;    //  Название плеера
     private int volume;      //  Уровень громкости
-
-    public MusicPlayer(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
-    public List<Music> getMusicList() {
-        return musicList;
-    }
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
 
     public String getName() {
         return name;

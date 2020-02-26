@@ -22,7 +22,8 @@
 
     <!--          нужен пустой констрктор и set  ()  -->
     <bean id="musicPlayer"
-          class="ru.test.springcourse.MusicPlayer">
+          class="ru.test.springcourse.MusicPlayer"
+            scope="prototype">
 <!--        <property name="name" value="Some name" />-->
 <!--        <property name="volume" value="50" />-->
         <property name="name" value="${musicPlayer.name}"/>
