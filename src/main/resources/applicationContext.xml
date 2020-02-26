@@ -19,6 +19,7 @@
           class="ru.test.springcourse.ClassicalMusic"
             init-method="doMyInit"
             destroy-method="doMyDestroy"
+            factory-method="getClassicalMusic"
             scope="prototype">
     </bean>
 
