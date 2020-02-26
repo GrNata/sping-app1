@@ -7,32 +7,8 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--    <bean id="musicBean"-->
-<!--          class="ru.test.springcourse.RockMusic">-->
-<!--    </bean>-->
+    <context:component-scan base-package="ru.test.springcourse"/>
 
-<!--    bean ROck или bean Classic-->
-
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-
-    <bean id="musicBean"
-          class="ru.test.springcourse.ClassicalMusic"
-            init-method="doMyInit"
-            destroy-method="doMyDestroy"
-            factory-method="getClassicalMusic"
-            scope="prototype">
-    </bean>
-
-
-    <!--          нужен пустой констрктор и set  ()  -->
-<!--    <bean id="musicPlayer"-->
-<!--          class="ru.test.springcourse.MusicPlayer"-->
-<!--            scope="prototype">-->
-<!--&lt;!&ndash;        <property name="name" value="Some name" />&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="volume" value="50" />&ndash;&gt;-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
 
 
 </beans>
