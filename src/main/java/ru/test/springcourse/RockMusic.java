@@ -8,6 +8,4 @@ public class RockMusic implements Music {
     public String getSong() {
         return "Beatls";
     }
-
-    // код для доступа к рок музыки
 }

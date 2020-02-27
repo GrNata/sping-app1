@@ -1,49 +1,43 @@
 package ru.test.springcourse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MusicPlayer {
-    private Music music;
 
-    private String name;    //  Название плеера
-    private int volume;      //  Уровень громкости
+//    @Autowired
+//    private Music music   ;
 
-    public String getName() {
-        return name;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+//    @Autowired
+//    public MusicPlayer(Music music) {
+//        this.music = music;
+//    }
+//
+//    @Autowired
+//    public void setMusic(Music music) {
+//        this.music = music;
+//    }
 
-    public int getVolume() {
-        return volume;
-    }
+//    public void playMusic() {
+//        System.out.println("Playing: " + classicalMusic.getSong());
+//        System.out.println("Playing: " + rockMusic.getSong());
+//    }
+    public String playMusic() {
+        return "Playing: " + classicalMusic.getSong();
 
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    // зависимость внедряеся из вне IoC
-    public MusicPlayer(Music music) {
-        this.music = music;
-    }
-
-    public MusicPlayer() {}
-
-    // зависимость внедряеся из вне IoC через set
-    public void setMusic(Music music) {
-        this.music = music;
-    }
-
-    public void playMusic() {
-    // Больше не создаем объекты
-//        music = new ClassicalMusic();
-//        // или
-//        music = new RockMusic();
-        //  код для воспроизведения музыки
-        System.out.println("Playing: " + music.getSong());
     }
 
 }
